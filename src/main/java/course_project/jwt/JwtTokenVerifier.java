@@ -44,7 +44,7 @@ public class JwtTokenVerifier extends OncePerRequestFilter {
 
         String token = authToken.replace("Bearer ", "");
 
-        //try {
+        try {
 
             Jws<Claims> claimsJws = Jwts.parser()
                     .setSigningKey(jwtSecretKey)
@@ -59,12 +59,12 @@ public class JwtTokenVerifier extends OncePerRequestFilter {
                     List.of(
                             (GrantedAuthority) () -> "ROLE_USER"
                     ));
-//
+
             SecurityContextHolder.getContext().setAuthentication(authentication);
             filterChain.doFilter(request, response);
 
-        //}catch(Exception e){
-            //response.setStatus(HttpStatus.UNAUTHORIZED.value());
-        //}
+        }catch(Exception e){
+            response.setStatus(HttpStatus.UNAUTHORIZED.value());
+        }
     }
 }
