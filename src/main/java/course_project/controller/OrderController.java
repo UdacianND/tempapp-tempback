@@ -19,7 +19,7 @@ public class OrderController {
             @RequestBody OrderDto orderDto
             ){
         int a = 1;
-        return ResponseEntity.ok(null);
+        return ResponseEntity.ok("yetkazildi");
     }
 
     @GetMapping("order/history")
