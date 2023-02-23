@@ -21,7 +21,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin
+@CrossOrigin(origins = "*")
 public class BookController {
 
     @GetMapping("institutionTypes")

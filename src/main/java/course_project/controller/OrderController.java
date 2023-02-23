@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin
+@CrossOrigin(origins = "*")
 public class OrderController {
     @PostMapping("order")
     public HttpEntity<?> postOrder(
