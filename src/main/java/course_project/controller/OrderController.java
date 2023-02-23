@@ -22,7 +22,7 @@ public class OrderController {
         return ResponseEntity.ok("yetkazildi");
     }
 
-    @GetMapping("order/history")
+    @PostMapping("order/history")
     public HttpEntity<?> getOrderHistory(
             @RequestParam String lang
     ){
